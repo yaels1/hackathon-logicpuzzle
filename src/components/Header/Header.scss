@@ -1,0 +1,30 @@
+@use "../../styles/partials/typography";
+@use "../../styles/partials/resets";
+
+.header {
+  font-family: SuperMario265, Verdana, Geneva, Tahoma, sans-serif;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    padding-bottom: 1rem;
+  }
+
+  &__subheader {
+    &--blue {
+      color: #009cda;
+    }
+    &--yellow {
+      color: #fcd000;
+    }
+    &--red {
+      color: #e71e07;
+    }
+    &--green {
+      color: #42b132;
+    }
+  }
+}
