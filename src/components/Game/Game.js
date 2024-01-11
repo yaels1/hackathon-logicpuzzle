@@ -4,10 +4,10 @@ import LogicPuzzle from "../LogicPuzzle/LogicPuzzle";
 
 function Game() {
   return (
-    <>
+    <section className="game">
       <SideBar />
       <LogicPuzzle />
-    </>
+    </section>
   );
 }
 

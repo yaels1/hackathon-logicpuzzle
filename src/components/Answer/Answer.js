@@ -1,5 +1,4 @@
 import "./Answer.scss";
-
 function Answer() {
   return (
     <form className="answer">
