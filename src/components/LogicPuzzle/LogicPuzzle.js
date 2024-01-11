@@ -5,25 +5,22 @@ function LogicPuzzle() {
   // import axios stuff and create variable for it
 
   return (
-    <table>
-      <tr>
-        <th></th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
+    <table className="table">
+      <tr className="table__column">
+        <th className="table__column-item">1</th>
+        <th className="table__column-item">2</th>
+        <th className="table__column-item">3</th>
+        <th className="table__column-item">4</th>
+      </tr>
+
+      <tr className="table__row">
+        <td className="table__row-item">A</td>
       </tr>
       <tr>
-        <td></td>
+        <td className="table__row-item">B</td>
       </tr>
       <tr>
-        <td>A</td>
-      </tr>
-      <tr>
-        <td>B</td>
-      </tr>
-      <tr>
-        <td>C</td>
+        <td className="table__row-item">C</td>
       </tr>
     </table>
   );

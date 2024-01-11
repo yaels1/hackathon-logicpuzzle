@@ -1,0 +1,17 @@
+.table {
+  width: 60%;
+
+  &__column {
+    &-item {
+      padding: 2rem 3rem;
+    }
+  }
+
+  &__row {
+    padding: 1rem;
+
+    &-item {
+      padding-block: 2rem;
+    }
+  }
+}
