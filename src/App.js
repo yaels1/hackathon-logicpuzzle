@@ -1,17 +1,19 @@
 import "./App.scss";
+import HomePage from "./Pages/HomePage/HomePage.js";
 import Header from "./components/Header/Header.js";
-import Instructions from "./components/Instructions/Instructions.js";
-import Game from "./components/Game/Game.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Instructions />
-        <Game />
-      </main>
-    </>
+    <BrowserRouter>
+      <>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/characters/:characterId" element={<HomePage />} />
+        </Routes>
+      </>
+    </BrowserRouter>
   );
 }
 
