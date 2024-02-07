@@ -6,9 +6,9 @@ function Instructions() {
     <>
       <section className="instructions">
         <h2 className="instructions__title">How to play</h2>
-        <p className="instuctions__main">
+        <div className="instuctions__main">
           <InstructionsList />
-        </p>
+        </div>
       </section>
     </>
   );

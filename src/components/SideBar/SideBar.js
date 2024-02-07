@@ -2,11 +2,11 @@ import "./SideBar.scss";
 import CharacterImage from "../CharacterImage/CharacterImage";
 import Answer from "../Answer/Answer";
 
-function SideBar({ currentCharacter }) {
+function SideBar({}) {
   return (
     <section className="sidebar">
       <Answer />
-      <CharacterImage image={currentCharacter} />
+      {/* <CharacterImage /> */}
     </section>
   );
 }
