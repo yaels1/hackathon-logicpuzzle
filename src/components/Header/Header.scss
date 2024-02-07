@@ -2,7 +2,6 @@
 @use "../../styles/partials/resets";
 
 .header {
-  font-family: SuperMario265, Verdana, Geneva, Tahoma, sans-serif;
   padding: 2.5rem;
   display: flex;
   justify-content: center;
@@ -14,17 +13,23 @@
   }
 
   &__subheader {
+    display: flex;
+
     &--blue {
       color: #009cda;
+      padding-inline: 2rem;
     }
     &--yellow {
       color: #fcd000;
+      padding-inline: 2rem;
     }
     &--red {
       color: #e71e07;
+      padding-inline: 2rem;
     }
     &--green {
       color: #42b132;
+      padding-inline: 2rem;
     }
   }
 }

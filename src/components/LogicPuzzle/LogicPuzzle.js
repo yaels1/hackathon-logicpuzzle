@@ -9,7 +9,7 @@ function LogicPuzzle() {
 
   const fetchCharacters = async () => {
     const response = await axios.get(`${baseUrl}/characters`);
-    // console.log(response.data);
+
     setCharacters(response.data);
   };
 
@@ -23,16 +23,18 @@ function LogicPuzzle() {
     <div className="characters">
       {characters.map((character) => (
         <div className="characters__container" key={character.id}>
-          <div className="character__info">
-            <p className="character__text character__name"> {character.name}</p>
-            <p className="character__text character__fact">
-              fact: {character.fact}
+          <div className="characters__info">
+            <p className="characters__text characters__name">
+              {character.name}
             </p>
-            <p className="character__text character__pages">
+            <p className="characters__text characters__fact">
+              {character.fact}
+            </p>
+            <p className="characters__text characters__pages">
               hint: {character.hint}
             </p>
 
-            {/* <img src={character.image} className="character__image" /> */}
+            <img src={character.image} className="characters__image" />
           </div>
         </div>
       ))}
@@ -42,37 +44,3 @@ function LogicPuzzle() {
 }
 
 export default LogicPuzzle;
-
-// <table className="table">
-//   <tr className="table__column">
-//     <th></th>
-//     <th className="table__column-item">1</th>
-//     <th className="table__column-item">2</th>
-//     <th className="table__column-item">3</th>
-//     <th className="table__column-item">4</th>
-//   </tr>
-
-//   <tr className="table__row">
-//     <td></td>
-//     <td className="table__row-item">A</td>
-//     <td className="table__row-item">A</td>;
-//     <td className="table__row-item">A</td>
-//     <td className="table__row-item">A</td>
-//   </tr>
-
-//   <tr>
-//     <td></td>
-//     <td className="table__row-item">B</td>
-//     <td className="table__row-item">B</td>
-//     <td className="table__row-item">B</td>
-//     <td className="table__row-item">B</td>
-//   </tr>
-
-//   <tr>
-//     <td></td>
-//     <td className="table__row-item">C</td>
-//     <td className="table__row-item">C</td>
-//     <td className="table__row-item">C</td>
-//     <td className="table__row-item">C</td>
-//   </tr>
-// </table>

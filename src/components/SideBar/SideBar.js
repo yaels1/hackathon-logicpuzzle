@@ -6,7 +6,7 @@ function SideBar({}) {
   return (
     <section className="sidebar">
       <Answer />
-      {/* <CharacterImage /> */}
+      <CharacterImage />
     </section>
   );
 }
