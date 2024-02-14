@@ -2,15 +2,36 @@
 
 .characters {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  width: 100%;
+  gap: 5px;
 
   &__container {
-    padding: 2rem;
-    border: 2px solid black;
     width: calc(100% / 4);
+    border: 1px solid black;
+    // height: 15rem;
+  }
+
+  &__cell {
+    padding: 10px;
+    text-align: center;
+  }
+
+  &__index {
+    font-weight: bold;
+  }
+
+  &__cell--hidden {
+    visibility: hidden;
+    display: none;
+  }
+
+  &__text {
+    margin: 0;
   }
 
   &__image {
-    width: 10%;
+    max-width: 100px;
+    // height: auto;
   }
 }

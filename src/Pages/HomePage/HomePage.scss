@@ -1,2 +1,6 @@
 @use "./styles/partials/resets";
 @use "./styles/partials/typography";
+
+.main {
+  max-width: 1280px;
+}

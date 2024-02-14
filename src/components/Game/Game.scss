@@ -2,4 +2,13 @@
   display: flex;
   justify-content: space-between;
   max-width: 1280px;
+
+  &__answer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__puzzle {
+    width: 900px;
+  }
 }
