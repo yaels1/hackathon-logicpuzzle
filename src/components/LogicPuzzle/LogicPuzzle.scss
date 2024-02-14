@@ -3,13 +3,13 @@
 .characters {
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
   gap: 5px;
 
   &__container {
-    width: calc(100% / 4);
+    width: calc(100% / 7);
     border: 1px solid black;
-    // height: 15rem;
+    height: 25rem;
+    gap: 0;
   }
 
   &__cell {
@@ -23,7 +23,6 @@
 
   &__cell--hidden {
     visibility: hidden;
-    display: none;
   }
 
   &__text {
@@ -31,7 +30,9 @@
   }
 
   &__image {
-    max-width: 100px;
+    // max-width: 100px;
     // height: auto;
+    width: 5rem;
+    padding-block: 2rem;
   }
 }

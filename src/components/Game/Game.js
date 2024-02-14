@@ -12,7 +12,9 @@ function Game() {
   const [characters, setCharacters] = useState(null);
   const [currentCharacter, setCurrentCharacter] = useState(null);
   const [submittedAnswer, setSubmittedAnswer] = useState("");
-  // const [revealedCharacterIds, setRevealedCharacterIds] = useState([]);
+  const [revealImage, setRevealImage] = useState(false);
+  const [finalAnswer, setFinalAnswer] = useState(false);
+  const [wrongAnswer, setWrongAnswer] = useState(false);
 
   const fetchAllCharacters = async () => {
     try {
@@ -37,10 +39,17 @@ function Game() {
     const answer = event.target.answer.value;
 
     if (answer.toLowerCase() === currentCharacter.name.toLowerCase()) {
-      fetchSingleCharacter(Number(currentCharacter.id) + 1);
-      console.log("Correct answer!");
+      if (Number(currentCharacter.id) === 12) {
+        console.log("final answer!");
+        setFinalAnswer(true);
+        setRevealImage(true);
+      } else if (fetchAllCharacters(Number(currentCharacter.id) + 1)) {
+        console.log("Correct answer!");
+        setRevealImage(true);
+      }
     } else {
       console.log("Incorrect answer!");
+      setWrongAnswer(true);
     }
 
     setSubmittedAnswer("");
@@ -55,20 +64,33 @@ function Game() {
     <section className="game">
       <div className="game__answer">
         <Answer
-          currentCharacter={currentCharacter}
           submittedAnswer={submittedAnswer}
           handleSubmit={handleSubmit}
           setSubmittedAnswer={setSubmittedAnswer}
         />
 
-        <CharacterImage currentCharacter={currentCharacter} />
+        <CharacterImage
+          currentCharacter={currentCharacter}
+          revealImage={revealImage}
+          submittedAnswer={submittedAnswer}
+        />
+        {wrongAnswer && (
+          <>
+            <p className="game__wrong">this is the wrong answer</p>
+            <p className="game__wrong"> try again!</p>
+          </>
+        )}
       </div>
       <div className="game__puzzle">
         <LogicPuzzle
           characters={characters}
           currentCharacter={currentCharacter}
+          finalAnswer={finalAnswer}
+          setFinalAnswer={setFinalAnswer}
         />
       </div>
+
+      <div className="game__win"></div>
     </section>
   );
 }

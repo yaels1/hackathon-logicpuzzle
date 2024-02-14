@@ -1,11 +1,7 @@
 import "./LogicPuzzle.scss";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
-const baseUrl = process.env.REACT_APP_API_URL;
-
-function LogicPuzzle({ characters, currentCharacter }) {
-  if (!characters) return <p>there is an error</p>;
+function LogicPuzzle({ characters, currentCharacter, finalAnswer }) {
+  if (!characters || !currentCharacter) return <p>there is an error</p>;
 
   return (
     <div className="characters">
@@ -38,6 +34,11 @@ function LogicPuzzle({ characters, currentCharacter }) {
           </div>
         </div>
       ))}
+      {finalAnswer && (
+        <p>
+          Congrats! you've found princess peach and completed the logic puzzle!
+        </p>
+      )}
     </div>
   );
 }

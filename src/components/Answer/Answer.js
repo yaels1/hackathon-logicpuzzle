@@ -7,12 +7,15 @@ function Answer({ submittedAnswer, setSubmittedAnswer, handleSubmit }) {
         type="text"
         name="answer"
         placeholder="Type answer here..."
+        className="answer__input"
         value={submittedAnswer}
         onChange={(event) => {
           setSubmittedAnswer(event.target.value);
         }}
       />
-      <button type="submit">Check Answer</button>
+      <button type="submit" className=" answer__submit">
+        Check Answer
+      </button>
     </form>
   );
 }
