@@ -26,11 +26,16 @@ function Game() {
   };
 
   const fetchSingleCharacter = async (id) => {
-    try {
-      const response = await axios.get(`${baseUrl}/characters/${id}`);
-      setCurrentCharacter(response.data);
-    } catch (error) {
-      console.error(error);
+    if (Number(id) === 13) {
+      setFinalAnswer(true);
+      console.log("this is peach");
+    } else {
+      try {
+        const response = await axios.get(`${baseUrl}/characters/${id}`);
+        setCurrentCharacter(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
@@ -40,21 +45,22 @@ function Game() {
 
     if (answer.toLowerCase() === currentCharacter.name.toLowerCase()) {
       if (Number(currentCharacter.id) === 12) {
-        console.log("final answer!");
-        setFinalAnswer(true);
+        fetchSingleCharacter(Number(currentCharacter.id) + 1)
+          .then(() => {})
+          .catch((error) => {
+            console.error("Error fetching final character:", error);
+          });
+      } else if (fetchSingleCharacter(Number(currentCharacter.id) + 1)) {
         setRevealImage(true);
-      } else if (fetchAllCharacters(Number(currentCharacter.id) + 1)) {
         console.log("Correct answer!");
-        setRevealImage(true);
+      } else {
+        setWrongAnswer(true);
+        console.log("Incorrect answer!");
       }
-    } else {
-      console.log("Incorrect answer!");
-      setWrongAnswer(true);
+
+      setSubmittedAnswer("");
     }
-
-    setSubmittedAnswer("");
   };
-
   useEffect(() => {
     fetchAllCharacters();
     fetchSingleCharacter(1);
@@ -86,7 +92,7 @@ function Game() {
           characters={characters}
           currentCharacter={currentCharacter}
           finalAnswer={finalAnswer}
-          setFinalAnswer={setFinalAnswer}
+          // setFinalAnswer={setFinalAnswer}
         />
       </div>
 
