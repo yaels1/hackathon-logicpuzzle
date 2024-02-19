@@ -48,18 +48,18 @@ function Game() {
         fetchSingleCharacter(Number(currentCharacter.id) + 1)
           .then(() => {})
           .catch((error) => {
-            console.error("Error fetching final character:", error);
+            console.error(error);
           });
       } else if (fetchSingleCharacter(Number(currentCharacter.id) + 1)) {
         setRevealImage(true);
+        setWrongAnswer(false);
         console.log("Correct answer!");
-      } else {
-        setWrongAnswer(true);
-        console.log("Incorrect answer!");
       }
-
-      setSubmittedAnswer("");
+    } else {
+      setWrongAnswer(true);
+      console.log("Incorrect answer!");
     }
+    setSubmittedAnswer("");
   };
   useEffect(() => {
     fetchAllCharacters();
@@ -83,7 +83,7 @@ function Game() {
         {wrongAnswer && (
           <>
             <p className="game__wrong">this is the wrong answer</p>
-            <p className="game__wrong"> try again!</p>
+            <p className="game__wrong"> guess again!</p>
           </>
         )}
       </div>
