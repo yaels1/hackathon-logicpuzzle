@@ -15,6 +15,7 @@ function Game() {
   const [revealImage, setRevealImage] = useState(false);
   const [finalAnswer, setFinalAnswer] = useState(false);
   const [wrongAnswer, setWrongAnswer] = useState(false);
+  // const [shuffledCharacters, setShuffledCharacters] = useState(null);
 
   const fetchAllCharacters = async () => {
     try {
@@ -61,8 +62,10 @@ function Game() {
     }
     setSubmittedAnswer("");
   };
+
   useEffect(() => {
     fetchAllCharacters();
+
     fetchSingleCharacter(1);
   }, []);
 
@@ -92,7 +95,7 @@ function Game() {
           characters={characters}
           currentCharacter={currentCharacter}
           finalAnswer={finalAnswer}
-          // setFinalAnswer={setFinalAnswer}
+          // shuffledCharacters={shuffledCharacters}
         />
       </div>
 

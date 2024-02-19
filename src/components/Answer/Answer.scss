@@ -1,8 +1,7 @@
 .answer {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin-block: 2rem;
+  margin: 2rem;
 
   &__input {
     padding: 1.5rem;
@@ -10,6 +9,7 @@
   }
 
   &__submit {
+    padding: 0.5rem;
     &:hover {
       background-color: red;
     }
