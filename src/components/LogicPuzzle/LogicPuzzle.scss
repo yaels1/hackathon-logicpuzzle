@@ -13,11 +13,6 @@
     gap: 0;
   }
 
-  &__index {
-    font-weight: bold;
-    padding-top: 1rem;
-  }
-
   &__cell {
     @include flex(column);
     flex: 1;

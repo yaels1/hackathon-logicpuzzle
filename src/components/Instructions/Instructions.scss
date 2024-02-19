@@ -1,12 +1,17 @@
+@use "../../styles/partials/mixins" as *;
+
 .instructions {
-  display: flex;
-  flex-direction: column;
+  @include flex(column);
   padding: 2rem;
   border: 1px solid black;
   max-width: 1280px;
   margin-inline: auto;
 
   &__title {
-    // padding-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__list-item {
+    padding-block: 0.5rem;
   }
 }

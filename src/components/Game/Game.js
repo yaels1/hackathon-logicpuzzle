@@ -15,7 +15,6 @@ function Game() {
   const [revealImage, setRevealImage] = useState(false);
   const [finalAnswer, setFinalAnswer] = useState(false);
   const [wrongAnswer, setWrongAnswer] = useState(false);
-  // const [shuffledCharacters, setShuffledCharacters] = useState(null);
 
   const fetchAllCharacters = async () => {
     try {
@@ -82,20 +81,14 @@ function Game() {
           currentCharacter={currentCharacter}
           revealImage={revealImage}
           submittedAnswer={submittedAnswer}
+          wrongAnswer={wrongAnswer}
         />
-        {wrongAnswer && (
-          <>
-            <p className="game__wrong">this is the wrong answer</p>
-            <p className="game__wrong"> guess again!</p>
-          </>
-        )}
       </div>
       <div className="game__puzzle">
         <LogicPuzzle
           characters={characters}
           currentCharacter={currentCharacter}
           finalAnswer={finalAnswer}
-          // shuffledCharacters={shuffledCharacters}
         />
       </div>
 

@@ -1,6 +1,11 @@
 import "./CharacterImage.scss";
 
-function CharacterImage({ currentCharacter, revealImage, submittedAnswer }) {
+function CharacterImage({
+  currentCharacter,
+  revealImage,
+  submittedAnswer,
+  wrongAnswer,
+}) {
   if (!currentCharacter) {
     return <p>Loading...</p>;
   }
@@ -20,7 +25,17 @@ function CharacterImage({ currentCharacter, revealImage, submittedAnswer }) {
       </div>
     );
   } else {
-    return <p className="image">Who could it be...?</p>;
+    return (
+      <>
+        {wrongAnswer && (
+          <>
+            <p className="game__wrong">this is the wrong answer</p>
+            <p className="game__wrong"> guess again!</p>
+          </>
+        )}
+        <p className="image">Who could it be...?</p>
+      </>
+    );
   }
 }
 
