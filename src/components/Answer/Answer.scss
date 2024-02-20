@@ -1,6 +1,6 @@
+@use "../../styles/partials/mixins" as *;
 .answer {
-  display: flex;
-  flex-direction: column;
+  @include flex(column);
   margin: 2rem;
 
   &__input {

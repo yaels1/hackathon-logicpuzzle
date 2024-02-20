@@ -1,14 +1,12 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/resets";
 
+@use "../../styles/partials/mixins" as *;
+
 .header {
+  @include flex(column);
+  @include margin;
   padding: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  max-width: 1280px;
-  margin-inline: auto;
 
   &__title {
     padding-bottom: 1rem;
@@ -16,7 +14,7 @@
   }
 
   &__subheader {
-    display: flex;
+    @include flex;
     font-size: 2rem;
 
     &--blue {
