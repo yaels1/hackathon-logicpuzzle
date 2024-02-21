@@ -50,11 +50,6 @@ function LogicPuzzle({ characters, currentCharacter, finalAnswer }) {
           )}
         </div>
       ))}
-      {finalAnswer && (
-        <p>
-          Congrats! you've found princess peach and completed the logic puzzle!
-        </p>
-      )}
     </div>
   );
 }

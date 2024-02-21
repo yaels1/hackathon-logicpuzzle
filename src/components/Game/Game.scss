@@ -1,20 +1,16 @@
 @use "../../styles/partials/mixins" as *;
 
 .game {
-  @include flex;
+  @include flex($align: flex-start);
   @include margin;
   margin-top: 2rem;
 
   &__answer {
     @include flex(column);
+    max-width: 35%;
   }
 
   &__puzzle {
     width: 100%;
-  }
-
-  &__wrong {
-    color: red;
-    padding-block: 0.5rem;
   }
 }

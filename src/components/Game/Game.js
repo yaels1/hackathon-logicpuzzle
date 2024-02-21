@@ -71,17 +71,20 @@ function Game() {
   return (
     <section className="game">
       <div className="game__answer">
-        <Answer
-          submittedAnswer={submittedAnswer}
-          handleSubmit={handleSubmit}
-          setSubmittedAnswer={setSubmittedAnswer}
-        />
+        {!finalAnswer && (
+          <Answer
+            submittedAnswer={submittedAnswer}
+            handleSubmit={handleSubmit}
+            setSubmittedAnswer={setSubmittedAnswer}
+          />
+        )}
 
         <CharacterImage
           currentCharacter={currentCharacter}
           revealImage={revealImage}
           submittedAnswer={submittedAnswer}
           wrongAnswer={wrongAnswer}
+          finalAnswer={finalAnswer}
         />
       </div>
       <div className="game__puzzle">
@@ -91,8 +94,6 @@ function Game() {
           finalAnswer={finalAnswer}
         />
       </div>
-
-      <div className="game__win"></div>
     </section>
   );
 }

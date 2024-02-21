@@ -5,4 +5,15 @@
   &__img {
     padding: 2rem;
   }
+
+  &__wrong {
+    color: red;
+    padding-block: 0.5rem;
+  }
+
+  &__complete {
+    color: blue;
+    font-size: 2rem;
+    max-width: 30%;
+  }
 }

@@ -1,6 +1,7 @@
-@use "./styles/partials/resets";
-@use "./styles/partials/typography";
-
-.main {
+@use "../../styles/partials/resets";
+@use "../../styles/partials/typography";
+@use "../../styles/partials/mixins" as *;
+main {
   @include margin;
+  padding-bottom: 3rem;
 }

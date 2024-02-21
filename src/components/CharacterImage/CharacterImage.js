@@ -5,6 +5,7 @@ function CharacterImage({
   revealImage,
   submittedAnswer,
   wrongAnswer,
+  finalAnswer,
 }) {
   if (!currentCharacter) {
     return <p>Loading...</p>;
@@ -29,11 +30,17 @@ function CharacterImage({
       <>
         {wrongAnswer && (
           <>
-            <p className="game__wrong">this is the wrong answer</p>
-            <p className="game__wrong"> guess again!</p>
+            <p className="image__wrong">this is the wrong answer</p>
+            <p className="image__wrong"> guess again!</p>
           </>
         )}
-        <p className="image">Who could it be...?</p>
+        {!finalAnswer && <p className="image">Who could it be...?</p>}
+        {finalAnswer && (
+          <p className="image__complete">
+            Congrats! you've found princess peach and completed the logic
+            puzzle!
+          </p>
+        )}
       </>
     );
   }

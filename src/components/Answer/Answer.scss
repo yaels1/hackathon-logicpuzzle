@@ -6,6 +6,11 @@
   &__input {
     padding: 1.5rem;
     font-size: 1rem;
+
+    &:focus {
+      border: 3px solid black;
+      outline: none;
+    }
   }
 
   &__submit {
